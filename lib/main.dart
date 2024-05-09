@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firelearn/blocssss/bloc/add_user_bloc.dart';
+import 'package:firelearn/blocssss/imageadding/bloc/image_adding_bloc.dart';
 import 'package:firelearn/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,6 +19,10 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => AddUserBloc()),
+        BlocProvider(
+          create: (context) => ImageAddingBloc(),
+          child: Container(),
+        )
       ],
       child: MaterialApp(
         home: Home(),

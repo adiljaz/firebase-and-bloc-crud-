@@ -31,13 +31,7 @@ class AddUserBloc extends Bloc<AddUserEvent, AddUserState> {
     });
   }
 
-  Future<bool> _addData({
-    required String name,
-    required int age,
-    required int classA,
-    required String fathername,
-    required String? imageUrl,
-  }) async {
+  Future<bool> _addData({required String name,required int age,required int classA, required String fathername,required String? imageUrl,}) async {
     final CollectionReference userCollection =
         FirebaseFirestore.instance.collection('users');
 
@@ -57,5 +51,11 @@ class AddUserBloc extends Bloc<AddUserEvent, AddUserState> {
       print('Error adding data: $error');
       return false; // Return false if an error occurs
     }
-  }
+  } 
+  /////////////
+  
+
+
+ 
+  
 }
